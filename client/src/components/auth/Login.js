@@ -15,7 +15,7 @@ const Login = ({ login, isAuthenticated }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    login(email, password);
+    login({ email, password });
   };
 
   if (isAuthenticated) {

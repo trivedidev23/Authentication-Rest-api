@@ -71,7 +71,12 @@ export const login =
     const body = JSON.stringify({ email, password });
 
     try {
-      const res = await axios.post("/api/auth", body, config);
+      debugger;
+      const res = await axios.post(
+        "http://localhost:5000/api/auth",
+        body,
+        config
+      );
 
       dispatch({
         type: LOGIN_SUCCESS,

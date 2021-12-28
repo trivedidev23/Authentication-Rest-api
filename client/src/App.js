@@ -12,14 +12,14 @@ import setAuthToken from "./utils/setAuthToken";
 import { loadUser } from "./actions/auth";
 import DashBoard from "./components/layout/DashBoard";
 
-// if (localStorage.token) {
-//   setAuthToken(localStorage.token);
-// }
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 const App = () => {
-  // useEffect(() => {
-  //   store.dispatch(loadUser());
-  // }, []);
+  useEffect(() => {
+    if (localStorage.token) store.dispatch(loadUser());
+  }, []);
   return (
     <Provider store={store}>
       <BrowserRouter>

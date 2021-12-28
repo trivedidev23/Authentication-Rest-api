@@ -5,7 +5,9 @@ import {
   REGISTER_FAIL,
   REGISTER_SUCCESS,
   USER_LOADED,
+  LOGOUT,
 } from "./types";
+
 import axios from "axios";
 import { setAlert } from "./alert";
 import setAuthToken from "../utils/setAuthToken";
@@ -71,7 +73,6 @@ export const login =
     const body = JSON.stringify({ email, password });
 
     try {
-      debugger;
       const res = await axios.post(
         "http://localhost:5000/api/auth",
         body,
@@ -96,3 +97,9 @@ export const login =
       });
     }
   };
+
+export const logout = () => (dispatch) => {
+  dispatch({
+    type: LOGOUT,
+  });
+};
